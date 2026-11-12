@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maths With Hari Babu</title>
+<style>
+:root{--navy:#101d3a;--navy2:#172b52;--gold:#e7b84b;--ink:#172033;--muted:#667085;--paper:#f5f7fb;--white:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--paper);color:var(--ink)}
+header{background:var(--navy);color:white;position:sticky;top:0;z-index:5;box-shadow:0 4px 18px #07132930}
+.nav{max-width:1120px;margin:auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{font-weight:850;letter-spacing:.2px;font-size:19px}.brand span{color:var(--gold)}
+nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}nav a{color:#e9eefb;text-decoration:none;font-size:14px;cursor:pointer}nav a:hover{color:var(--gold)}
+button,.btn{border:0;border-radius:11px;padding:11px 16px;font-weight:750;cursor:pointer;background:var(--gold);color:#172033}
+.btn-outline{background:transparent;border:1px solid #ffffff70;color:white}.btn-dark{background:var(--navy);color:white}.btn-small{padding:8px 12px;font-size:13px}
+.hero{background:linear-gradient(120deg,#101d3a,#203b6d);color:white;padding:76px 22px 72px;overflow:hidden}
+.hero-inner{max-width:1120px;margin:auto;display:grid;grid-template-columns:1.25fr .75fr;gap:35px;align-items:center}
+.eyebrow{color:var(--gold);font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:12px}
+h1{font-size:clamp(36px,5vw,58px);line-height:1.06;margin:15px 0}h1 span{color:var(--gold)}
+.hero p{color:#d7e0f2;line-height:1.7;max-width:590px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.hero-card{background:#ffffff12;border:1px solid #ffffff30;border-radius:22px;padding:25px;backdrop-filter:blur(8px)}
+.hero-card .big{font-size:50px}.hero-card h3{margin:8px 0}.hero-card p{font-size:14px;margin-bottom:0}
+.wrap{max-width:1120px;margin:auto;padding:55px 22px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:24px}
+h2{font-size:30px;margin:0 0 8px;color:var(--navy)}.sub{color:var(--muted);margin:0;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card{background:white;border:1px solid #e8ebf2;border-radius:17px;padding:21px;box-shadow:0 8px 24px #14264b08}
+.card .icon{width:43px;height:43px;border-radius:13px;background:#fff5d9;display:grid;place-items:center;font-size:22px}
+.card h3{margin:14px 0 7px;color:var(--navy)}.card p{color:var(--muted);font-size:14px;line-height:1.55;min-height:42px}
+.pill{display:inline-block;background:#edf2fb;color:#29436f;border-radius:30px;padding:5px 10px;font-size:12px;font-weight:750}
+.features{background:#fff}.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.feature{padding:19px;border-radius:15px;background:var(--paper)}.feature b{display:block;margin:8px 0;color:var(--navy)}.feature span{font-size:13px;color:var(--muted);line-height:1.5}
+.panel{display:none;background:#fff;border:1px solid #e7eaf1;border-radius:18px;padding:24px;margin-top:24px;box-shadow:0 8px 28px #14264b0c}
+.panel.active{display:block}.panel h2{font-size:25px}.form{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #d8deea;border-radius:10px;font:inherit;background:white}
+textarea{min-height:90px;resize:vertical}.full{grid-column:1/-1}.lesson-list{display:grid;gap:10px;margin-top:18px}
+.lesson{border:1px solid #e6eaf1;border-radius:12px;padding:13px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+footer{background:var(--navy);color:#dce5f5;padding:28px 22px;text-align:center;font-size:13px}
+.modal{display:none;position:fixed;inset:0;background:#081329a8;z-index:10;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}
+.modal-box{background:white;border-radius:18px;padding:25px;width:min(420px,100%)}.modal-box h2{font-size:24px}
+.note{font-size:12px;color:var(--muted);line-height:1.5;margin-top:10px}
+@media(max-width:800px){.hero-inner{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.feature-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.nav{align-items:flex-start;flex-direction:column}nav{gap:12px}.grid,.feature-grid,.form{grid-template-columns:1fr}.full{grid-column:auto}.wrap{padding:40px 17px}.hero{padding:55px 17px}.section-head{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+  <div class="brand">MATHS <span>WITH</span> HARI BABU</div>
+  <nav><a href="#home">Home</a><a href="#courses">Courses</a><a href="#features">Features</a><a href="#about">About</a><button class="btn btn-small" onclick="openLogin()">Login / Register</button></nav>
+</div></header>
+<main>
+<section class="hero" id="home"><div class="hero-inner">
+  <div><div class="eyebrow">Your maths learning space</div><h1>Learn Maths.<br><span>Build Confidence.</span></h1>
+  <p>Clear lessons, useful notes and practice to help students learn mathematics step by step — from school classes to Intermediate.</p>
+  <div class="hero-actions"><a class="btn" href="#courses">Explore Courses</a><button class="btn btn-outline" onclick="openLogin()">Student / Teacher Login</button></div></div>
+  <div class="hero-card"><div class="big">📐</div><h3>Maths made easier</h3><p>Watch recorded classes, revise with PDF notes, practise questions and check your learning progress.</p></div>
+</div></section>
+
+<section class="wrap" id="courses"><div class="section-head"><div><div class="eyebrow">Choose your level</div><h2>Explore Courses</h2><p class="sub">Select your class or Intermediate year to begin learning.</p></div></div>
+<div class="grid" id="courseGrid"></div></section>
+
+<section class="features" id="features"><div class="wrap"><div class="eyebrow">Learn at your pace</div><h2>Everything in one place</h2><p class="sub" style="margin-bottom:24px">A simple learning space for students and a teaching workspace for the teacher.</p>
+<div class="feature-grid">
+<div class="feature">🎥<b>Recorded lessons</b><span>Watch topic-wise video classes.</span></div>
+<div class="feature">📄<b>PDF notes</b><span>Keep lesson notes and revision material together.</span></div>
+<div class="feature">📝<b>Homework & tests</b><span>Practise questions and complete assignments.</span></div>
+<div class="feature">📊<b>Marks & progress</b><span>Review test scores and learning progress.</span></div>
+</div></div></section>
+
+<section class="wrap" id="about"><div class="card"><div class="eyebrow">About the teacher</div><h2>Learn with Hari Babu</h2><p class="sub">A mathematics learning website for Classes 6–10 and Intermediate 1st and 2nd Year students. Lessons and study materials can be added by the teacher.</p></div>
+<div class="panel" id="dashboard"><div class="section-head"><div><div class="eyebrow">Your workspace</div><h2 id="dashTitle">Dashboard</h2><p class="sub" id="dashIntro"></p></div><button class="btn btn-dark btn-small" onclick="logout()">Log out</button></div>
+<div id="teacherTools" style="display:none"><h3>Add a lesson or note</h3><div class="form">
+<input id="lessonTitle" placeholder="Lesson title"><select id="lessonCourse"></select>
+<input id="lessonType" placeholder="Type: Video lesson / PDF notes"><input id="lessonLink" placeholder="Video or file link (optional)">
+<textarea id="lessonDesc" class="full" placeholder="Short description"></textarea>
+<button class="btn full" onclick="addLesson()">Save lesson</button></div></div>
+<div id="studentTools" style="display:none"><h3>Available learning materials</h3><p class="sub">Choose a course and review the lessons added by your teacher.</p></div>
+<div class="lesson-list" id="lessonList"></div>
+<p class="note">Demo version: this page stores sample account and lesson data in this browser only. It does not yet provide secure online accounts, shared cloud uploads, or real student records. Connect a secure database and file storage before using it with real students.</p>
+</div>
+</section>
+</main>
+<footer>© 2026 Maths With Hari Babu · Learn Maths. Build Confidence. Achieve Success!</footer>
+
+<div class="modal" id="loginModal"><div class="modal-box">
+<button style="float:right;background:#edf1f7" onclick="closeLogin()">✕</button><div class="eyebrow">Welcome</div><h2>Login / Register</h2>
+<p class="sub">Choose a demo role to preview the website.</p>
+<input id="userName" placeholder="Your name" style="margin:14px 0 10px">
+<select id="userRole"><option value="student">Student</option><option value="teacher">Teacher</option></select>
+<button class="btn" style="width:100%;margin-top:14px" onclick="login()">Continue</button>
+<p class="note">Demo only. No password or real authentication is configured.</p>
+</div></div>
+<script>
+const courses=[
+["Class 6","Mathematics","📘"],["Class 7","Mathematics","📗"],["Class 8","Mathematics","📙"],["Class 9","Mathematics","📕"],["Class 10","Mathematics","🎓"],
+["Intermediate 1st Year","Maths 1A & 1B","📐"],["Intermediate 2nd Year","Maths 2A & 2B","📊"]
+];
+const grid=document.getElementById('courseGrid');
+courses.forEach(([name,desc,icon])=>{const el=document.createElement('article');el.className='card';el.innerHTML=`<div class="icon">${icon}</div><h3>${name}</h3><p>${desc}</p><span class="pill">Course</span>`;grid.appendChild(el)});
+const select=document.getElementById('lessonCourse');
+courses.forEach(c=>{let o=document.createElement('option');o.value=c[0];o.textContent=c[0];select.appendChild(o)});
+function openLogin(){document.getElementById('loginModal').classList.add('show')}
+function closeLogin(){document.getElementById('loginModal').classList.remove('show')}
+function login(){let name=document.getElementById('userName').value.trim()||'Learner';let role=document.getElementById('userRole').value;sessionStorage.setItem('mathsUser',JSON.stringify({name,role}));closeLogin();showDashboard()}
+function showDashboard(){let u=JSON.parse(sessionStorage.getItem('mathsUser')||'null');if(!u)return;let p=document.getElementById('dashboard');p.classList.add('active');document.getElementById('dashTitle').textContent=(u.role==='teacher'?'Teacher':'Student')+' Dashboard';document.getElementById('dashIntro').textContent='Welcome, '+u.name+'.';document.getElementById('teacherTools').style.display=u.role==='teacher'?'block':'none';document.getElementById('studentTools').style.display=u.role==='student'?'block':'none';renderLessons();p.scrollIntoView({behavior:'smooth'})}
+function logout(){sessionStorage.removeItem('mathsUser');document.getElementById('dashboard').classList.remove('active')}
+function getLessons(){try{return JSON.parse(localStorage.getItem('mathsLessons')||'[]')}catch(e){return []}}
+function addLesson(){let title=document.getElementById('lessonTitle').value.trim();if(!title){alert('Please enter a lesson title.');return}let arr=getLessons();arr.unshift({title,course:select.value,type:document.getElementById('lessonType').value||'Lesson',link:document.getElementById('lessonLink').value,desc:document.getElementById('lessonDesc').value});localStorage.setItem('mathsLessons',JSON.stringify(arr));['lessonTitle','lessonType','lessonLink','lessonDesc'].forEach(id=>document.getElementById(id).value='');renderLessons()}
+function renderLessons(){let list=document.getElementById('lessonList');let arr=getLessons();list.innerHTML=arr.length?'':'<p class="sub">No lessons added yet. Your teacher can add the first lesson from the teacher dashboard.</p>';arr.forEach(x=>{let d=document.createElement('div');d.className='lesson';let safe=document.createElement('div');let h=document.createElement('b');h.textContent=x.title;let p=document.createElement('div');p.className='note';p.textContent=x.course+' · '+x.type+(x.desc?' · '+x.desc:'');safe.append(h,p);d.appendChild(safe);if(x.link){let a=document.createElement('a');a.href=x.link;a.target='_blank';a.rel='noopener';a.textContent='Open';a.className='pill';d.appendChild(a)}list.appendChild(d)})}
+</script>
+</body></html>
