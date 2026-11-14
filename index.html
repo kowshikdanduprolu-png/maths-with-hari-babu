@@ -107,4 +107,18 @@ function getLessons(){try{return JSON.parse(localStorage.getItem('mathsLessons')
 function addLesson(){let title=document.getElementById('lessonTitle').value.trim();if(!title){alert('Please enter a lesson title.');return}let arr=getLessons();arr.unshift({title,course:select.value,type:document.getElementById('lessonType').value||'Lesson',link:document.getElementById('lessonLink').value,desc:document.getElementById('lessonDesc').value});localStorage.setItem('mathsLessons',JSON.stringify(arr));['lessonTitle','lessonType','lessonLink','lessonDesc'].forEach(id=>document.getElementById(id).value='');renderLessons()}
 function renderLessons(){let list=document.getElementById('lessonList');let arr=getLessons();list.innerHTML=arr.length?'':'<p class="sub">No lessons added yet. Your teacher can add the first lesson from the teacher dashboard.</p>';arr.forEach(x=>{let d=document.createElement('div');d.className='lesson';let safe=document.createElement('div');let h=document.createElement('b');h.textContent=x.title;let p=document.createElement('div');p.className='note';p.textContent=x.course+' · '+x.type+(x.desc?' · '+x.desc:'');safe.append(h,p);d.appendChild(safe);if(x.link){let a=document.createElement('a');a.href=x.link;a.target='_blank';a.rel='noopener';a.textContent='Open';a.className='pill';d.appendChild(a)}list.appendChild(d)})}
 </script>
-</body></html>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://ocvkuorjcdfuejvqpvxv.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY = "PASTE_YOUR_PUBLISHABLE_KEY_HERE";
+
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    sb_publishable_omRMVxPtYXhZHc-Uv2F2Xg_AIneTwsi
+
+);
+
+console.log("MathMaster Supabase Connected!");
+</script></body></html>
